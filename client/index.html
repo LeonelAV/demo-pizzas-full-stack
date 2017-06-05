@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="pizzaApp">
 <head>
 	<meta charset="UTF-8">
 	<title>Pizza's App</title>
@@ -7,6 +7,15 @@
 <body>
 	<h1>Pizza's App</h1>
 	<h2>{{ 4 + 5 }}</h2>
-	<script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
+
+	<div ng-controller="MainController">
+
+		<ul>
+			<li ng-repeat="pizza in pizzas">{{ pizza.name }}</li>
+		</ul>
+
+	</div>
+
+	<script src="app.js" type="text/javascript"></script>
 </body>
 </html>
