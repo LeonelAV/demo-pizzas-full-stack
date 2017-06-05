@@ -1,7 +1,7 @@
 function DataService ($http) {
 
 	function getAllPizzas() {
-		return $http.get('/pizzas')
+		return $http.get('/api/pizzas')
 			.then( response => response.data )
 	}
 

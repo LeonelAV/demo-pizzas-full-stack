@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 /* static folder */
 app.use( express.static(path.join(__dirname,'../client')))
 
-app.use('/pizzas', routesPizzas)
-app.use('/pizza', routesPizza)
+app.use('/api/pizzas', routesPizzas)
+app.use('/api/pizza', routesPizza)
 
 module.exports = app
