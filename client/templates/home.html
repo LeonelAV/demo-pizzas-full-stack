@@ -2,9 +2,16 @@
     <h1>Bootstrap starter template</h1>
     <p class="lead">Use this document as a way to quickly start any new project.
         <br> All you get is this text and a mostly barebones HTML document.</p>
-        <ul>
-            <li ng-repeat="pizza in pizzas">{{ pizza.name }}</li>
-        </ul>
-
+    <ul class="list-unstyled list-pizzas">
+        <li ng-repeat="pizza in pizzas">
+            <div class="thumbnail">
+                <img ng-style="{'background-image':'url({{ pizza.image }})'}" ng-alt="{{ pizza.name }}">
+                <div class="caption">
+                    <h3>{{ pizza.name }}</h3>
+                    <p>{{ pizza.description }}</p>
+                    <p><a href="#" class="btn btn-danger" role="button" ng-click="removePizza(pizza._id)">Remove</a></p>
+                 </div>
+            </div>
+        </li>
+    </ul>
 </div>
-
