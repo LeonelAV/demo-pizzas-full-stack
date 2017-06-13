@@ -1,0 +1,16 @@
+<h1>This is Admin</h1>
+
+<div><a href="#!/add" class="btn btn-primary">Add Pizza</a></div>
+
+<table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
+  <tr ng-repeat="row in $data">
+    <td data-title="'Image'">
+      <img width="50" ng-src="{{row.image}}" alt="" />
+    </td>
+    <td data-title="'ID'" sortable="'_id'">{{row._id}}</td>
+    <td data-title="'Name'" sortable="'name'">{{row.name}}</td>
+    <td data-title="'Description'" sortable="'description'">{{row.description}}</td>
+    <td data-title="'Actions'"><a class="btn btn-danger" role="button" ng-click="removePizza(row._id)">Remove</a></td>
+
+  </tr>
+</table>
