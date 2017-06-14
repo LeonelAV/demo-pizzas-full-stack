@@ -1,7 +1,10 @@
+var fs = require('fs');
+var htmlAdmin = fs.readFileSync(__dirname + '/template.html', 'utf8');
+
 function configRoutes($routeProvider) {
   $routeProvider
       .when('/admin', {
-        templateUrl: '/templates/admin.html',
+        template: htmlAdmin,
         controller: 'AdminController'
       })
 
