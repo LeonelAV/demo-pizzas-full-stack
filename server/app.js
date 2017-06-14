@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
+const authRoutes = require('./routes/auth')
 const routesPizzas = require('./routes/pizzas')
 const routesPizza = require('./routes/pizza')
 
@@ -14,7 +15,9 @@ app.use(bodyParser.json())
 /* static folder */
 app.use( express.static(path.join(__dirname,'../client/public')))
 
+app.use( authRoutes )
 app.use('/api/pizzas', routesPizzas)
 app.use('/api/pizza', routesPizza)
+
 
 module.exports = app
