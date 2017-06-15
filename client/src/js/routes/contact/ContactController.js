@@ -1,4 +1,4 @@
-function ContactController($scope, $location, ApiService) {
+function ContactController($scope, $location, ApiService, SweetAlert) {
 
   $scope.sendMessage = function( event ) {
     event.preventDefault()
@@ -7,7 +7,9 @@ function ContactController($scope, $location, ApiService) {
     const dataMessage = { name, email, subject, message }
 
     ApiService.sendMessage( dataMessage )
-      .then( console.log )
+      .then( msg => {
+        SweetAlert.swal("Success!", msg, "success");
+      } )
 
   }
 

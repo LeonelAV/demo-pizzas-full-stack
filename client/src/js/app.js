@@ -2,6 +2,7 @@ const angular = require('angular')
 
 const ngAnimate = require('angular-animate')
 const toastr = require('angular-toastr')
+const sweetAlert = require('angular-sweetalert')
 
 const routesModule = require('./routes')
 const servicesModule = require('./services')
@@ -12,7 +13,8 @@ angular.module('pizzaApp', [
     routesModule,
     servicesModule,
     ngAnimate,
-    toastr
+    toastr,
+    'oitozero.ngSweetAlert'
   ])
   .run( runAtBegin )
 
