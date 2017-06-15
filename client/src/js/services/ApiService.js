@@ -15,7 +15,13 @@ function DataService ($http) {
 			.then( response => response.data )
 	}
 
-	return { getAllPizzas, addPizza, removePizza }
+	function sendMessage( dataMessage ) {
+		return $http.post('/contact', dataMessage)
+			.then( response => response.data )
+	}
+
+
+	return { getAllPizzas, addPizza, removePizza, sendMessage }
 
 }
 

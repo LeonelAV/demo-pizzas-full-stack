@@ -7,7 +7,7 @@ function LoginController($scope, $location, AuthService) {
 		AuthService.login(username, password)
 			.then(msg => {
 				console.log(msg)
-					// $location.path('/profile')
+					$location.path('/admin')
 			})
 			.catch(console.log)
 	}

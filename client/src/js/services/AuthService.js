@@ -22,6 +22,7 @@ function AuthService($http, $rootScope, StorageService, jwtHelper) {
     }
 
 		function logout() {
+      console.log('logouting...');
 			StorageService.removeToken()
 			delete $rootScope.loggedUser
 		}

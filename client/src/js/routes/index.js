@@ -11,14 +11,17 @@ const AddController = require('./addPizza/AddController')
 const configRouteAdmin = require('./admin')
 const AdminController = require('./admin/AdminController')
 
+const configRouteContact = require('./contact')
+const ContactController = require('./contact/ContactController')
+
 const configRouteRegister = require('./register')
 const RegisterController = require('./register/RegisterController')
 
 const configRouteLogin = require('./login')
 const LoginController = require('./login/LoginController')
 
-
-const configRouteContact = require('./contact')
+const configRouteLogout = require('./logout')
+const LogoutController = require('./logout/LogoutController')
 
 angular.module('pizzaAppRoutes', [ angularRoute, "ngTable" ])
 
@@ -31,6 +34,7 @@ angular.module('pizzaAppRoutes', [ angularRoute, "ngTable" ])
   .config( configRouteAdd )
 
   // Route /contact
+  .controller('ContactController', ContactController)
   .config( configRouteContact )
 
   // Route /admin
@@ -44,6 +48,10 @@ angular.module('pizzaAppRoutes', [ angularRoute, "ngTable" ])
   // Route /login
   .controller('LoginController', LoginController)
   .config( configRouteLogin )
+
+  // Route /logout
+  .controller('LogoutController', LogoutController)
+  .config( configRouteLogout )
 
 module.exports = 'pizzaAppRoutes'
 

@@ -7,6 +7,7 @@ const app = express()
 const authRoutes = require('./routes/auth')
 const routesPizzas = require('./routes/pizzas')
 const routesPizza = require('./routes/pizza')
+const routesContact = require('./routes/contact')
 
 /* bodyParser */
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -16,8 +17,11 @@ app.use(bodyParser.json())
 app.use( express.static(path.join(__dirname,'../client/public')))
 
 app.use( authRoutes )
+app.use( routesContact )
 app.use('/api/pizzas', routesPizzas)
 app.use('/api/pizza', routesPizza)
+
+
 
 
 module.exports = app

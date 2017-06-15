@@ -1,7 +1,11 @@
+var fs = require('fs')
+var htmlContact = fs.readFileSync(__dirname + '/template.html', 'utf8');
+
 function configRoutes($routeProvider) {
   $routeProvider
       .when('/contact', {
-        template: '<div id="contact"><h1>Contact page</h1></div>'
+        template: htmlContact,
+        controller: 'ContactController'
       })
 
 }
